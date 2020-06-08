@@ -9,6 +9,11 @@ inputs:
     type: string
     inputBinding:
       position: 1
+  decision:
+    type: boolean
+    default: true
+    inputBinding:
+      prefix: "-b"
 outputs:
   count_cells_dataset:
     type: string
