@@ -1,9 +1,9 @@
 #!/usr/bin/env cwl-runner
 # count-cells.cwl
 
-cwlVersion: v1.1
 class: CommandLineTool
-baseCommand: ["python", "threshold_decision.py"]
+cwlVersion: v1.1
+
 inputs:
   cell_count:
     type: string
@@ -13,7 +13,12 @@ inputs:
     type: int
     inputBinding:
       position: 2
+
 outputs:
   dilute_decision:
+    doc: decision variable
     type: boolean
-    doc: "decision variable"
+
+baseCommand:
+- python
+- threshold_decision.py
