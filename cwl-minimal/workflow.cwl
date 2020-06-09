@@ -1,4 +1,5 @@
 #!/usr/bin/env cwl-runner
+$namespaces: { iana: "https://www.iana.org/assignments/media-types/" }
 
 class: Workflow
 cwlVersion: v1.0
@@ -6,6 +7,7 @@ cwlVersion: v1.0
 inputs:
   initial_params: 
     type: File
+    format: iana:application/json
   threshold: int
 
 outputs: []
