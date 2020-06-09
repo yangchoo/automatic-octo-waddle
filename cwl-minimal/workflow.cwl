@@ -18,11 +18,11 @@ steps:
       params: initial_params
     run: count_cells.cwl
     out:
-    - dataref
+    - run_id
   
   threshold_decision:
     in:
-      dataref: count_cells/dataref
+      run_id: count_cells/run_id
       threshold: threshold
     run: threshold_decision.cwl
     out:
@@ -40,11 +40,11 @@ steps:
       params: threshold_decision/count_cell_params
     run: count_cells.cwl
     out:
-    - dataref
+    - run_id
 
   threshold_decision_2:
     in:
-      dataref: count_cells_maybe/dataref
+      run_id: count_cells_maybe/run_id
       threshold: threshold
     run: threshold_decision.cwl
     out:

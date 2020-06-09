@@ -14,8 +14,8 @@ inputs:
       position: 1
 
 outputs:
-  dataref:
-    type: string # url
+  run_id:
+    type: string # RunId
 
 # Supplement `launch` to return dataref, or have some intermediate script
 # which gets that information somehow.

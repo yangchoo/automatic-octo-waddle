@@ -7,8 +7,8 @@ cwlVersion: v1.0
 label: Threshold Program
 
 inputs:
-  dataref:
-    type: string  # url
+  run_id:
+    type: string  # type: RunId
     inputBinding:
       position: 1
   threshold:
