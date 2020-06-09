@@ -9,14 +9,12 @@ label: CountCells Protocol Wrapper
 inputs:
   params:
     type: File
-    # format: iana:application/json
     inputBinding:
       position: 1
 
 outputs:
   dataref:
-    type: string # url
+    type: string
 
-# Supplement `launch` to return dataref, or have some intermediate script
-# which gets that information somehow.
-baseCommand: [someCountCells.py]
+baseCommand:
+- someCountCells.py

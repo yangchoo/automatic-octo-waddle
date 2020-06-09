@@ -7,7 +7,7 @@ cwlVersion: v1.0
 
 inputs:
   dataref:
-    type: string  # url
+    type: string
     inputBinding:
       position: 1
   threshold:
@@ -18,6 +18,6 @@ inputs:
 outputs:
   dilute_params:
     type: File
-    # format: iana:application/json
 
-baseCommand: [threshold_decision.py]
+baseCommand:
+- threshold_decision.py

@@ -9,10 +9,10 @@ label: DiluteCells Protocol Wrapper
 inputs:
   params:
     type: File
-    # format: iana:application/json
     inputBinding:
       position: 1
 
 outputs: []
 
-baseCommand: [someDiluteCells.py]
+baseCommand:
+- someDiluteCells.py
