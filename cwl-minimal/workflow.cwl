@@ -6,7 +6,6 @@ cwlVersion: v1.0
 inputs:
   initial_params: 
     type: File
-    format: json
   threshold: int
 
 outputs: []

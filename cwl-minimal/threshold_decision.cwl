@@ -17,10 +17,8 @@ inputs:
 outputs:
   dilute_params:
     type: File
-    format: json
   count_cell_params:
     type: File
-    format: json
 
 baseCommand:
 - python

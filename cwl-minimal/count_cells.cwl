@@ -7,7 +7,6 @@ cwlVersion: v1.0
 inputs:
   params:
     type: File
-    format: json
     inputBinding:
       position: 1
 
