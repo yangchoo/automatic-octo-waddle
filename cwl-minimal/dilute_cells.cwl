@@ -5,8 +5,8 @@ class: CommandLineTool
 cwlVersion: v1.1
 
 inputs:
-  decision:
-    type: boolean
+  params:
+    type: File
     inputBinding:
       position: 1
 

@@ -5,20 +5,18 @@ class: CommandLineTool
 cwlVersion: v1.1
 
 inputs:
-  decision:
-    type: boolean
-    default: true
-    inputBinding:
-      prefix: -b
-  ref:
-    type: string
+  params:
+    type: File
+    format: json
     inputBinding:
       position: 1
 
 outputs:
-  count_cells_dataset:
-    type: string
+  dataref:
+    type: string # url
 
+# Supplement `launch` to return dataref, or have some intermediate script
+# which gets that information somehow.
 baseCommand:
 - transcriptic
 - launch

@@ -4,7 +4,9 @@ class: Workflow
 cwlVersion: v1.1
 
 inputs:
-  ref: string
+  initial_params: 
+    type: File
+    format: json
   threshold: int
 
 outputs: []
@@ -12,38 +14,44 @@ outputs: []
 steps:
   count_cells:
     in:
-      ref: ref
+      params: initial_params
     run: count_cells.cwl
     out:
-    - count_cells_dataset
+    - dataref
+  
   threshold_decision:
     in:
-      cell_count: count_cells/count_cells_dataset
+      dataref: count_cells/dataref
       threshold: threshold
     run: threshold_decision.cwl
     out:
-    - dilute_decision
+    - dilute_params
+    - count_cell_params
+  
   dilute_cells:
     in:
-      decision: threshold_decision/dilute_decision
+      params: threshold_decision/dilute_params
     run: dilute_cells.cwl
     out: []
+
   count_cells_maybe:
     in:
-      decision: threshold_decision/dilute_decision
-      ref: ref
+      params: threshold_decision/count_cell_params
     run: count_cells.cwl
     out:
-    - count_cells_dataset
+    - dataref
+
   threshold_decision_2:
     in:
-      cell_count: count_cells_maybe/count_cells_dataset
+      dataref: count_cells_maybe/dataref
       threshold: threshold
     run: threshold_decision.cwl
     out:
-    - dilute_decision    
+    - dilute_params
+    - count_cell_params  
+  
   dilute_cells_2:
     in:
-      decision: threshold_decision_2/dilute_decision
+      params: threshold_decision_2/dilute_params
     run: dilute_cells.cwl
     out: []

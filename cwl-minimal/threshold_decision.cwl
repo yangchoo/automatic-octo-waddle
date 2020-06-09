@@ -5,8 +5,8 @@ class: CommandLineTool
 cwlVersion: v1.1
 
 inputs:
-  cell_count:
-    type: string
+  dataref:
+    type: string  # url
     inputBinding:
       position: 1
   threshold:
@@ -15,9 +15,12 @@ inputs:
       position: 2
 
 outputs:
-  dilute_decision:
-    doc: decision variable
-    type: boolean
+  dilute_params:
+    type: File
+    format: json
+  count_cell_params:
+    type: File
+    format: json
 
 baseCommand:
 - python
