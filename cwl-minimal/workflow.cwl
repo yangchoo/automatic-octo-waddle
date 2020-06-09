@@ -1,7 +1,7 @@
 #!/usr/bin/env cwl-runner
 
 class: Workflow
-cwlVersion: v1.1
+cwlVersion: v1.0
 
 inputs:
   initial_params: 

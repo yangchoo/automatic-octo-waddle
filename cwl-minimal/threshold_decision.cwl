@@ -2,7 +2,7 @@
 # count-cells.cwl
 
 class: CommandLineTool
-cwlVersion: v1.1
+cwlVersion: v1.0
 
 inputs:
   dataref:
