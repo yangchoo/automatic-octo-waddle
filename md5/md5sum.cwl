@@ -1,0 +1,1 @@
+https://github.com/dockstore-testing/md5sum-checker/blob/develop/md5sum/md5sum-tool.cwl
