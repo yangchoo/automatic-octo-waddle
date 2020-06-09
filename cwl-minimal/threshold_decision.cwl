@@ -4,6 +4,7 @@ $namespaces: { iana: "https://www.iana.org/assignments/media-types/" }
 
 class: CommandLineTool
 cwlVersion: v1.0
+label: Threshold Program
 
 inputs:
   dataref:
